@@ -1,0 +1,122 @@
+Build a complete modern, responsive, SEO-friendly website in HTML, CSS, and Next.js for a dental equipment company named:
+
+**“QUALIFIED DENTAL EQUIPMENTS”**
+
+---
+
+### ✨ Design style:
+- Professional, medical-tech, clean look
+- White glowing neon background (#FFFFFF)
+- Neon turquoise accents & glow (#00FFD1)
+- Geometric sans-serif font: use **Poppins** for headers (like "QUALIFIED DENTAL EQUIPMENTS") and Open Sans or Poppins regular for body text
+- Rounded card components, smooth icons, subtle shadows
+- Add 3D hover/touch effects: slight lift, scale, or rotation on product cards & buttons
+
+---
+
+### 🎨 Color palette:
+- Background: glowing white (#FFFFFF)
+- Primary accent & buttons: neon turquoise (#00FFD1)
+- Separators / section backgrounds: subtle grey (#F5F5F5)
+
+---
+
+### 📱 Fully responsive:
+- Desktop, tablet, and mobile view
+- Use CSS Grid, Flexbox, media queries or Tailwind CSS to adjust layout
+- Should look premium and clean on all devices
+
+---
+
+### 🏠 Pages & Structure:
+
+✅ Homepage (/):
+- Hero Section:
+  - Heading: “Precision-Driven Dental Equipment for the Future of Dentistry”
+  - Subheading: “Qualified delivers cutting-edge dental solutions for clinics and hospitals”
+  - Neon turquoise button: “Explore Products”
+  - Right: Dental chair or product image with soft turquoise glow
+
+- Product Category Grid:
+  - Categories: Dental Chairs, Compressors, Scalers, Autoclaves
+  - Each in rounded card with minimalist icon, title & “View Products” CTA
+
+- Why Choose Us:
+  - Icons with gradient turquoise glow & titles:
+    ✔️ 5000+ Clinics Served
+    🏭 ISO & CE Certified
+    🧑‍🔧 24/7 Technical Support
+    🚚 Pan-India Delivery
+
+- About Section:
+  - Two-column layout: text & factory or medical-tech image with turquoise overlay
+
+- Best Selling Products Carousel:
+  - Curved white cards with glow
+  - Product image, title, short specs, “Get Quote” button
+  - 3D hover effect on cards
+
+- Dealer Invitation:
+  - Background: light turquoise gradient
+  - Heading: “Become an Authorized Dealer”
+  - Button: “Register Now”
+  - Short bullet list of dealer benefits
+
+- Support Section:
+  - Tiles: Installation, Warranty, Service Request
+  - Neon turquoise icons
+
+- Sticky WhatsApp & Call Now buttons
+
+- Footer:
+  - Neon turquoise background
+  - White text: Quick Links, Contact Info, Social Media Icons, Copyright
+
+---
+
+### 📦 Product pages:
+- Separate responsive pages:
+  - /products/dental-chairs
+  - /products/compressors
+  - /products/scalers
+  - /products/autoclaves
+
+- Each page shows:
+  - Multiple product cards (title, image, short specs, “Get Quote” CTA)
+  - Smooth 3D hover/touch effects
+
+---
+
+### 🛠 Technical:
+- Use Next.js for pages & routing
+- HTML, CSS (plain CSS or Tailwind CSS for fast styling & glowing effects)
+- Include Google Fonts import for **Poppins** in Head
+- Code must be editable & maintainable in Visual Studio Code
+- Should run locally (`npm install` + `npm run dev`)
+- Compatible with Replit & deployable to Vercel
+
+---
+
+### ⚙ SEO:
+- Use Next.js `<Head>` to add meta title & description per page
+- Alt text for all images
+- Clean URLs like /products/dental-chairs
+
+---
+
+✅ Add sample CSS:
+- Neon turquoise glowing button
+- Rounded card with subtle shadow & 3D hover effect
+
+✅ Make sure whole design looks clean, professional, modern, fits dental equipment industry.
+
+---
+
+### ⚡ Advanced:
+- Best practice folder structure: /components, /pages, /styles
+- Dynamic product detail pages (optional)
+- Contact form that sends email (optional)
+
+---
+
+✅ Must be fully user-friendly, SEO-friendly, mobile responsive, and look premium.

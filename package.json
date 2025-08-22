@@ -1,0 +1,33 @@
+{
+  "name": "qualified-dental-website",
+  "version": "1.0.0",
+  "description": "Premium Dental Equipment Supplier Website - Complete dental equipment solutions across Tamil Nadu and Karnataka",
+  "main": "next.config.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dental",
+    "equipment",
+    "medical",
+    "healthcare",
+    "tamil-nadu",
+    "karnataka"
+  ],
+  "author": "Qualified Dental Equipment Suppliers",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
