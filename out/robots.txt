@@ -1,0 +1,98 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /test
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*?*
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+
+# Allow specific file types for search engines
+Allow: /*.html$
+Allow: /*.htm$
+Allow: /sitemap.xml$
+Allow: /robots.txt$
+
+# Search engine specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 3
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 5
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 3
+
+# Sitemap locations
+Sitemap: https://www.qualifieddental.in/sitemap.xml
+Sitemap: https://www.qualifieddental.in/sitemap-products.xml
+Sitemap: https://www.qualifieddental.in/sitemap-categories.xml
+
+# Host directive (Yandex specific)
+Host: https://www.qualifieddental.in
+
+# Clean-param directive for tracking parameters
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&gclid&fbclid / 
+
+# Crawl budget optimization
+Request-rate: 1/5
+Visit-time: 0600-1800
+
+# Noindex directives for specific pages
+User-agent: *
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search/
+
+# Allow image crawling for Google Images
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /static/images/
+Allow: /uploads/
+
+# Allow media files
+User-agent: Mediapartners-Google
+Allow: /
+
+# Allow ads bot
+User-agent: AdsBot-Google
+Allow: /
+
+# Allow mobile bot
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Allow news bot
+User-agent: Googlebot-News
+Allow: /
+
+# Allow video bot
+User-agent: Googlebot-Video
+Allow: /

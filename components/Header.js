@@ -9,7 +9,7 @@ export default function Header() {
       <div className="container">
         <div className="header-content">
           <Link href="/" className="logo">
-            <img src="/images/logo.png" alt="Qualified Dental Equipments Logo" className="logo-image" style={{ height: '40px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }} />
+            <img src="/images/LOGO.png" alt="Qualified Dental Equipments Logo" className="logo-image" style={{ height: '40px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }} />
             <h1 style={{ display: 'inline-block', verticalAlign: 'middle' }}>QUALIFIED DENTAL EQUIPMENTS</h1>
           </Link>
           

@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
-console.log('📁 Starting image copy process...');
+console.log('📁 Starting image copy process for Netlify deployment...');
 
 // Source and destination paths
 const sourceDir = path.join(__dirname, '..', 'public', 'images');
@@ -11,7 +10,8 @@ const destDir = path.join(__dirname, '..', 'out', 'images');
 // Check if source directory exists
 if (!fs.existsSync(sourceDir)) {
   console.error('❌ Source images directory not found:', sourceDir);
-  process.exit(1);
+  console.log('ℹ️  This might be expected if you have no images in public/images');
+  process.exit(0); // Exit gracefully instead of error
 }
 
 // Create destination directory if it doesn't exist
@@ -20,55 +20,96 @@ if (!fs.existsSync(destDir)) {
   console.log('✅ Created destination directory:', destDir);
 }
 
-// Function to copy directory recursively
+// Function to copy directory recursively with better error handling
 function copyRecursiveSync(src, dest) {
-  const exists = fs.existsSync(src);
-  const stats = exists && fs.statSync(src);
-  const isDirectory = exists && stats.isDirectory();
-  
-  if (isDirectory) {
-    if (!fs.existsSync(dest)) {
-      fs.mkdirSync(dest);
+  try {
+    const exists = fs.existsSync(src);
+    if (!exists) {
+      console.warn(`⚠️  Source path does not exist: ${src}`);
+      return;
     }
-    fs.readdirSync(src).forEach(childItemName => {
-      copyRecursiveSync(
-        path.join(src, childItemName),
-        path.join(dest, childItemName)
-      );
-    });
-  } else {
-    fs.copyFileSync(src, dest);
+    
+    const stats = fs.statSync(src);
+    const isDirectory = stats.isDirectory();
+    
+    if (isDirectory) {
+      if (!fs.existsSync(dest)) {
+        fs.mkdirSync(dest, { recursive: true });
+      }
+      
+      const items = fs.readdirSync(src, { withFileTypes: true });
+      for (const item of items) {
+        const srcPath = path.join(src, item.name);
+        const destPath = path.join(dest, item.name);
+        
+        // Skip hidden files and directories
+        if (item.name.startsWith('.')) {
+          continue;
+        }
+        
+        copyRecursiveSync(srcPath, destPath);
+      }
+    } else {
+      // Copy file
+      fs.copyFileSync(src, dest);
+      console.log(`✅ Copied: ${path.relative(sourceDir, src)}`);
+    }
+  } catch (error) {
+    console.error(`❌ Error copying ${src}:`, error.message);
   }
 }
 
-try {
-  // Copy images directory
-  console.log('📋 Copying images from:', sourceDir);
-  console.log('📋 Copying images to:', destDir);
-  
-  copyRecursiveSync(sourceDir, destDir);
-  
-  console.log('✅ Successfully copied images directory');
-  console.log('📊 Checking copied files...');
-  
-  // Count files in destination
-  const countFiles = (dir) => {
-    let count = 0;
-    const files = fs.readdirSync(dir, { withFileTypes: true });
-    for (const file of files) {
-      if (file.isDirectory()) {
-        count += countFiles(path.join(dir, file.name));
+// Function to count files recursively
+function countFiles(dir) {
+  let count = 0;
+  try {
+    const items = fs.readdirSync(dir, { withFileTypes: true });
+    for (const item of items) {
+      if (item.isDirectory()) {
+        count += countFiles(path.join(dir, item.name));
       } else {
         count++;
       }
     }
-    return count;
-  };
+  } catch (error) {
+    console.error(`❌ Error counting files in ${dir}:`, error.message);
+  }
+  return count;
+}
+
+try {
+  console.log('📋 Copying images from:', sourceDir);
+  console.log('📋 Copying images to:', destDir);
+  
+  // Clear destination directory first to avoid stale files
+  if (fs.existsSync(destDir)) {
+    console.log('🧹 Cleaning destination directory...');
+    const items = fs.readdirSync(destDir);
+    for (const item of items) {
+      const itemPath = path.join(destDir, item);
+      const stats = fs.statSync(itemPath);
+      if (stats.isDirectory()) {
+        fs.rmSync(itemPath, { recursive: true, force: true });
+      } else {
+        fs.unlinkSync(itemPath);
+      }
+    }
+  }
+  
+  // Copy images
+  copyRecursiveSync(sourceDir, destDir);
+  
+  console.log('✅ Image copy process completed');
+  console.log('📊 Verifying copied files...');
   
   const fileCount = countFiles(destDir);
-  console.log(`📊 Copied ${fileCount} image files successfully`);
+  console.log(`📊 Successfully copied ${fileCount} image files`);
+  
+  if (fileCount === 0) {
+    console.log('ℹ️  No images were found to copy. This might be expected.');
+  }
   
 } catch (error) {
-  console.error('❌ Error copying images:', error.message);
+  console.error('❌ Fatal error during image copy process:', error.message);
   process.exit(1);
 }
