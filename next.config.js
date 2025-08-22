@@ -8,8 +8,9 @@ const nextConfig = {
   },
   trailingSlash: true, // Better for Netlify routing
   output: 'export', // Enable static export for Netlify
-  // Use a different directory to avoid permission conflicts
-  distDir: 'build',
+  // Add base path for Netlify deployment
+  basePath: '',
+  assetPrefix: '',
 }
 
 module.exports = nextConfig
