@@ -2,7 +2,7 @@ import Head from 'next/head'
 import ImageSlider from '../../components/ImageSlider'
 import ProductSEO from '../../components/ProductSEO'
 import { openWhatsAppQuote } from '../../utils/whatsapp'
-// import ff from '../../Public/images/DentalChairs/Flare/1.png'
+import ff from '../../Public/images/DentalChairs/Flare/1.png'
 const QualifiedV100Images = [
   '/images/DentalChairs/Qualified/QualifiedV100.png',
   '/images/V100.png',
@@ -35,9 +35,9 @@ const UrekaImages = [
 ]
 const FlareImages = [
   '../../Public/images/DentalChairs/Flare/1.png',
-  '/images/Dental Chairs/Flare/2.png',
-  '/images/Dental Chairs/Flare/3.png',
-  '/images/Dental Chairs/Flare/4.png',
+  '../../Public/images/DentalChairs/Flare/2.png',
+  '../../Public/images/DentalChairs/Flare/3.png',
+  '../../Public/images/DentalChairs/Flare/4.png',
 ]
 const StarImages = [
   '/images/Dental Chairs/stardenatl.jpg'
