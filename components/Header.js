@@ -10,11 +10,13 @@ export default function Header() {
       <div className="container">
         <div className="header-content">
           <Link href="/" className="logo">
-            <Image 
-              src="/images/LOGO.png" 
-              alt="Qualified Dental Equipments Logo" 
-              width={200} 
-              height={100} 
+          <Image
+  src="/images/LOGO.png"
+  alt="Qualified Dental Equipments Logo"
+  width={200}
+  height={100}
+
+
               style={{ height: '40px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }}
             />
             <h1 style={{ display: 'inline-block', verticalAlign: 'middle' }}>
