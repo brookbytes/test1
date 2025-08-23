@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
-
+import Logo from '../public/images/LOGO.png' // ✅ Import instead of src path
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,8 +10,15 @@ export default function Header() {
       <div className="container">
         <div className="header-content">
           <Link href="/" className="logo">
-            <img src="/images/LOGO.png" alt="Qualified Dental Equipments Logo" className="logo-image" style={{ height: '40px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }} />
-            <h1 style={{ display: 'inline-block', verticalAlign: 'middle' }}>QUALIFIED DENTAL EQUIPMENTS</h1>
+            <img 
+              src={Logo.src} 
+              alt="Qualified Dental Equipments Logo" 
+              className="logo-image" 
+              style={{ height: '40px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }} 
+            />
+            <h1 style={{ display: 'inline-block', verticalAlign: 'middle' }}>
+              QUALIFIED DENTAL EQUIPMENTS
+            </h1>
           </Link>
           
           <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
