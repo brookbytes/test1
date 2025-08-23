@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
-import Logo from '../public/images/LOGO.png' // ✅ Import instead of src path
+import Image from 'next/image'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -10,11 +10,12 @@ export default function Header() {
       <div className="container">
         <div className="header-content">
           <Link href="/" className="logo">
-            <img 
-              src={Logo.src} 
+            <Image 
+              src="/images/LOGO.png" 
               alt="Qualified Dental Equipments Logo" 
-              className="logo-image" 
-              style={{ height: '40px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }} 
+              width={200} 
+              height={100} 
+              style={{ height: '40px', width: 'auto', marginRight: '10px', verticalAlign: 'middle' }}
             />
             <h1 style={{ display: 'inline-block', verticalAlign: 'middle' }}>
               QUALIFIED DENTAL EQUIPMENTS
