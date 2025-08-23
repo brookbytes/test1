@@ -2,13 +2,14 @@ import Head from 'next/head'
 import ImageSlider from '../../components/ImageSlider'
 import ProductSEO from '../../components/ProductSEO'
 import { openWhatsAppQuote } from '../../utils/whatsapp'
+// import ff from '../../Public/images/DentalChairs/Flare/1.png'
 const QualifiedV100Images = [
-  '/images/Dental Chairs/Qualified/QualifiedV100.png',
-  '/images/Dental Chairs/Qualified/V100.png',
+  '/images/DentalChairs/Qualified/QualifiedV100.png',
+  '/images/V100.png',
 ]
 const Qualified200Images = [
-  '/images/Dental Chairs/Qualified/Qualified 200 (1).png',
-  '/images/Dental Chairs/Qualified/Qualified 200 (2).png',
+  '/images/DentalChairs/Qualified/Qualified 200 (1).png',
+  '/images/DentalChairs/Qualified/Qualified 200 (2).png',
 ]
 const GnatusS200Images = [
   '/images/Dental Chairs/Gnatus/GnatusS400.png',
@@ -33,7 +34,7 @@ const UrekaImages = [
   '/images/Dental Chairs/Ureka/ureka2.png',
 ]
 const FlareImages = [
-  '/images/Dental Chairs/Flare/1.png',
+  '../../Public/images/DentalChairs/Flare/1.png',
   '/images/Dental Chairs/Flare/2.png',
   '/images/Dental Chairs/Flare/3.png',
   '/images/Dental Chairs/Flare/4.png',

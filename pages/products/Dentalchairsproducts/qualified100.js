@@ -35,8 +35,8 @@ export default function Qualified100Chair() {
       "Warranty": "5 Years comprehensive coverage"
     },
     images: [
-      "/images/Dental Chairs/Qualified/QualifiedV100.png",
-      "/images/Dental Chairs/Qualified/V100.png"
+      "/images/DentalChairs/Qualified/QualifiedV100.png",
+      "/images/V100.png"
     ]
   }
 
