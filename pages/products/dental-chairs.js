@@ -2,14 +2,13 @@ import Head from 'next/head'
 import ImageSlider from '../../components/ImageSlider'
 import ProductSEO from '../../components/ProductSEO'
 import { openWhatsAppQuote } from '../../utils/whatsapp'
-import ff from '../../Public/images/DentalChairs/Flare/1.png'
 const QualifiedV100Images = [
-  '/images/DentalChairs/Qualified/QualifiedV100.png',
-  '/images/V100.png',
+  '../../public/images/DentalChairs/Qualified/QualifiedV100.png',
+  '../../public/images/V100.png',
 ]
 const Qualified200Images = [
-  '/images/DentalChairs/Qualified/Qualified 200 (1).png',
-  '/images/DentalChairs/Qualified/Qualified 200 (2).png',
+  '/images/Dental Chairs/Qualified/Qualified 200 (1).png',
+  '/images/Dental Chairs/Qualified/Qualified 200 (2).png',
 ]
 const GnatusS200Images = [
   '/images/Dental Chairs/Gnatus/GnatusS400.png',
@@ -30,17 +29,17 @@ const GnatusS500Images = [
   '/images/Dental Chairs/Gnatus/GnatusS500 1.png',
 ]
 const UrekaImages = [
-  '/images/Dental Chairs/Ureka/ureaka.png',
-  '/images/Dental Chairs/Ureka/ureka2.png',
+  '/images/DentalChairs/Ureka/ureaka.png',
+  '/images/DentalChairs/Ureka/ureka2.png',
 ]
 const FlareImages = [
-  '../../Public/images/DentalChairs/Flare/1.png',
-  '../../Public/images/DentalChairs/Flare/2.png',
-  '../../Public/images/DentalChairs/Flare/3.png',
-  '../../Public/images/DentalChairs/Flare/4.png',
+  '/images/DentalChairs/Flare/1.png',
+  '/images/DentalChairs/Flare/2.png',
+  '/images/DentalChairs/Flare/3.png',
+  '/images/DentalChairs/Flare/4.png',
 ]
 const StarImages = [
-  '/images/Dental Chairs/stardenatl.jpg'
+  '/images/DentalChairs/stardenatl.jpg'
 ]
 
 export default function DentalChairs() {
